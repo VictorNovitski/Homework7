@@ -15,6 +15,17 @@ int m = Convert.ToInt32(Console.ReadLine());
 int[,] matrica = new int[n, m];
 Generate2DArray(matrica);
 Print2DArray(matrica);
+var arr = Avarage(matrica); 
+Console.WriteLine();
+PrintArray(arr);
+
+void PrintArray(double[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i] + "  " );
+    }
+} 
 
 void Generate2DArray(int[,] array)
 {
@@ -41,7 +52,11 @@ void Print2DArray(int[,] array)
     }
 }
 
-Console.WriteLine("Среднее арифметическое каждого столбца: ");
+// Console.WriteLine("Среднее арифметическое каждого столбца: ");
+double[] Avarage(int[,] matrica)
+{
+    double[] result = new double[matrica.GetLength(1)];
+
 for (int j = 0; j < matrica.GetLength(1); j++)
 {
     double avarage = 0;
@@ -50,5 +65,7 @@ for (int j = 0; j < matrica.GetLength(1); j++)
         avarage = (avarage + matrica[i, j]);
     }
     avarage = avarage / n;
-    Console.Write(avarage + "; ");
+    result[j] = avarage;
+}
+return result; 
 }
