@@ -14,19 +14,19 @@ int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("введите номер столбца");
 int m = Convert.ToInt32(Console.ReadLine());
 
-int [,] matrica = new int [4, 4];
+
+int[,] matrica = new int [4, 4];
 Generate2DArray(matrica);
-
-if (n > matrica.GetLength(0) || m > matrica.GetLength(1))
-{
-    Console.WriteLine("такого элемента нет");
-}
-else
-{
-    Console.WriteLine($"значение элемента {n} строки и {m} столбца: {matrica[n-1,m-1]}");
-}
-
 Print2DArray(matrica);
+if(IsContain(matrica, m, n))
+{
+    System.Console.WriteLine($"Число = {matrica[m, n]}");
+}
+
+bool IsContain(int[,] matrix, int m, int n)
+{
+    return ((m < matrix.GetLength(0) && m >= 0) && (n < matrix.GetLength(1) && n >= 0));
+}
 
 void Generate2DArray(int[,] array)
 {
