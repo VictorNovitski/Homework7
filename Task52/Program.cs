@@ -52,7 +52,7 @@ void Print2DArray(int[,] array)
     }
 }
 
-// Console.WriteLine("Среднее арифметическое каждого столбца: ");
+//("Среднее арифметическое каждого столбца: ");
 double[] Avarage(int[,] matrica)
 {
     double[] result = new double[matrica.GetLength(1)];
